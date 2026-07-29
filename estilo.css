@@ -1,0 +1,497 @@
+/* CONFIGURACIÓN GENERAL */
+
+*{
+    box-sizing:border-box;
+}
+
+
+body {
+
+    font-family: Arial, sans-serif;
+
+    background:#f4f4f4;
+
+    min-height:100vh;
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:center;
+
+    padding:20px;
+
+    margin:0;
+
+}
+
+
+
+/* TARJETA PRINCIPAL */
+
+
+.tarjeta {
+
+    display:flex;
+
+    width:100%;
+
+    max-width:800px;
+
+    background:white;
+
+    border-radius:12px;
+
+    overflow:hidden;
+
+    box-shadow:0 5px 15px rgba(0,0,0,0.2);
+
+}
+
+
+
+/* LADOS */
+
+
+.lado {
+
+    width:50%;
+
+    padding:30px;
+
+}
+
+
+
+/* LADO IZQUIERDO */
+
+
+.izquierdo {
+
+    background:linear-gradient(135deg,#5b3cc4,#8e44ad);
+
+    color:white;
+
+    display:flex;
+
+    flex-direction:column;
+
+    justify-content:center;
+
+}
+
+
+
+.izquierdo h2 {
+
+    font-size:24px;
+
+    margin-bottom:10px;
+
+}
+
+
+
+.descripcion {
+
+    margin-bottom:15px;
+
+    line-height:1.4;
+
+    font-size:14px;
+
+}
+
+
+
+/* BENEFICIOS */
+
+
+.beneficio {
+
+    display:flex;
+
+    align-items:center;
+
+    margin-bottom:15px;
+
+    gap:12px;
+
+}
+
+
+
+.beneficio img {
+
+    width:40px;
+
+    height:40px;
+
+    object-fit:contain;
+
+    padding:5px;
+
+    border-radius:50%;
+
+}
+
+
+
+.beneficio h4 {
+
+    margin:0;
+
+    font-size:15px;
+
+}
+
+
+
+.beneficio p {
+
+    margin:3px 0 0;
+
+    font-size:13px;
+
+}
+
+
+
+/* PRECIO */
+
+
+.precio {
+
+    margin-top:20px;
+
+    padding-top:15px;
+
+}
+
+
+
+.precio h1 {
+
+    margin:0;
+
+    font-size:42px;
+
+}
+
+
+
+.precio h1 span {
+
+    font-size:20px;
+
+    font-weight:normal;
+
+}
+
+
+
+.promo {
+
+    margin-top:15px;
+
+    line-height:1.5;
+
+    font-size:17px;
+
+}
+
+
+
+.promo strong {
+
+    font-size:22px;
+
+    color:white;
+
+}
+
+
+
+
+/* LADO DERECHO */
+
+
+.derecho {
+
+    background:white;
+
+}
+
+
+
+form {
+
+    display:flex;
+
+    flex-direction:column;
+
+}
+
+
+
+label {
+
+    margin-top:10px;
+
+    margin-bottom:5px;
+
+    font-weight:bold;
+
+}
+
+
+
+input {
+
+    width:100%;
+
+    padding:12px;
+
+    border:1px solid #ccc;
+
+    border-radius:6px;
+
+    font-size:16px;
+
+}
+
+
+
+/* FILA DE EXPIRACIÓN Y CVV */
+
+
+.fila {
+
+    display:flex;
+
+    gap:10px;
+
+    margin-top:10px;
+
+}
+
+
+
+.fila div {
+
+    flex:1;
+
+}
+
+
+
+
+/* BOTÓN */
+
+
+button {
+
+    margin-top:20px;
+
+    padding:14px;
+
+    background:#3498db;
+
+    color:white;
+
+    border:none;
+
+    border-radius:8px;
+
+    font-size:16px;
+
+    cursor:pointer;
+
+}
+
+
+
+button:hover {
+
+    background:#217dbb;
+
+}
+
+
+
+
+
+
+
+/* ========================= */
+/* TABLETS */
+/* ========================= */
+
+
+@media(max-width:700px){
+
+
+body{
+
+    align-items:flex-start;
+
+    padding:15px;
+
+}
+
+
+
+.tarjeta{
+
+
+    flex-direction:column;
+
+    width:100%;
+
+
+}
+
+
+
+.lado{
+
+
+    width:100%;
+
+    padding:25px;
+
+
+}
+
+
+
+.izquierdo{
+
+    text-align:center;
+
+}
+
+
+
+.beneficio{
+
+
+    text-align:left;
+
+}
+
+
+
+.precio h1{
+
+    font-size:38px;
+
+}
+
+
+
+}
+
+
+
+
+/* ========================= */
+/* CELULARES PEQUEÑOS */
+/* ========================= */
+
+
+@media(max-width:400px){
+
+
+
+body{
+
+    padding:10px;
+
+}
+
+
+
+.tarjeta{
+
+    border-radius:15px;
+
+}
+
+
+
+.lado{
+
+    padding:20px;
+
+}
+
+
+
+.izquierdo h2{
+
+    font-size:21px;
+
+}
+
+
+
+.descripcion{
+
+    font-size:13px;
+
+}
+
+
+
+.beneficio img{
+
+    width:35px;
+
+    height:35px;
+
+}
+
+
+
+.beneficio h4{
+
+    font-size:14px;
+
+}
+
+
+
+.beneficio p{
+
+    font-size:11px;
+
+}
+
+
+
+.precio h1{
+
+    font-size:34px;
+
+}
+
+
+
+.promo{
+
+    font-size:14px;
+
+}
+
+
+
+.fila{
+
+    flex-direction:column;
+
+}
+
+
+
+}

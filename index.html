@@ -1,0 +1,817 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Una cita especial ❤️</title>
+
+
+<style>
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:'Segoe UI',sans-serif;
+}
+
+
+body{
+
+    background:linear-gradient(135deg,#ff758c,#ff7eb3);
+
+    min-height:100vh;
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:center;
+
+    padding:20px;
+
+    overflow:hidden;
+
+}
+
+
+/* TARJETAS */
+
+.card{
+
+    width:100%;
+
+    max-width:420px;
+
+    background:white;
+
+    padding:clamp(20px,5vw,35px);
+
+    border-radius:25px;
+
+    text-align:center;
+
+    box-shadow:0 15px 40px rgba(0,0,0,.25);
+
+    position:relative;
+
+    animation:aparecer .7s ease;
+
+}
+
+
+
+@keyframes aparecer{
+
+    from{
+
+        opacity:0;
+
+        transform:scale(.8);
+
+    }
+
+
+    to{
+
+        opacity:1;
+
+        transform:scale(1);
+
+    }
+
+}
+
+
+
+
+h1{
+
+    color:#ff2f69;
+
+    font-size:clamp(24px,6vw,32px);
+
+    margin-bottom:15px;
+
+}
+
+
+
+h2{
+
+    color:#444;
+
+    font-size:clamp(18px,5vw,24px);
+
+    margin-bottom:15px;
+
+}
+
+
+
+p{
+
+    color:#666;
+
+    font-size:clamp(14px,4vw,17px);
+
+    line-height:1.5;
+
+    margin-bottom:20px;
+
+}
+
+
+
+/* INPUTS */
+
+
+label{
+
+    display:block;
+
+    text-align:left;
+
+    font-weight:bold;
+
+    margin-top:15px;
+
+}
+
+
+
+input{
+
+    width:100%;
+
+    padding:12px;
+
+    font-size:16px;
+
+    border-radius:10px;
+
+    border:1px solid #ccc;
+
+}
+
+
+
+/* BOTONES */
+
+
+button{
+
+    border:none;
+
+    padding:12px 25px;
+
+    border-radius:12px;
+
+    cursor:pointer;
+
+    font-size:16px;
+
+    transition:.3s;
+
+}
+
+
+
+#si{
+
+    background:#ff2f69;
+
+    color:white;
+
+}
+
+
+
+#si:hover{
+
+    transform:scale(1.08);
+
+}
+
+
+
+/* BOTON NO */
+
+
+.botones{
+
+    width:100%;
+
+    height:150px;
+
+    position:relative;
+
+    margin-top:20px;
+
+}
+
+
+
+#no{
+
+    position:absolute;
+
+    left:220px;
+
+    top:0;
+
+    background:#777;
+
+    color:white;
+
+}
+
+
+
+
+
+/* BOTON VIP */
+
+
+.vip-container{
+
+    display:flex;
+
+    justify-content:center;
+
+    width:100%;
+
+}
+
+
+
+#vip{
+
+    background:#ffd700;
+
+    color:#333;
+
+    font-weight:bold;
+
+    animation:vibrar 1s infinite;
+
+    box-shadow:0 0 15px rgba(255,215,0,.8);
+
+}
+
+
+
+@keyframes vibrar{
+
+
+0%{
+transform:translateX(0);
+}
+
+
+10%{
+transform:translateX(-4px);
+}
+
+
+20%{
+transform:translateX(4px);
+}
+
+
+30%{
+transform:translateX(-4px);
+}
+
+
+40%{
+transform:translateX(4px);
+}
+
+
+50%{
+transform:translateX(0);
+}
+
+
+100%{
+transform:translateX(0);
+}
+
+
+}
+
+
+
+#vip:hover{
+
+    transform:scale(1.15);
+
+}
+
+
+
+/* TARJETA FINAL */
+
+
+.linea{
+
+    width:80%;
+
+    height:2px;
+
+    background:#ff7aa2;
+
+    margin:20px auto;
+
+}
+
+
+
+
+
+/* CORAZONES */
+
+
+.corazon{
+
+    position:fixed;
+
+    top:-30px;
+
+    animation:caer linear forwards;
+
+}
+
+
+
+@keyframes caer{
+
+
+from{
+
+transform:translateY(-10vh);
+
+opacity:1;
+
+}
+
+
+to{
+
+transform:translateY(110vh);
+
+opacity:0;
+
+}
+
+
+}
+
+
+
+
+
+
+/* CELULARES PEQUEÑOS */
+
+
+@media(max-width:380px){
+
+
+.card{
+
+    padding:20px;
+
+}
+
+
+button{
+
+    width:100%;
+
+}
+
+
+.botones{
+
+    height:170px;
+
+}
+
+
+#no{
+
+    margin-top:20px;
+
+}
+
+
+}
+
+
+
+
+</style>
+
+
+</head>
+
+
+<body>
+
+
+
+
+<!-- PREGUNTA -->
+
+
+<div class="card" id="pregunta">
+
+
+<h1>🍿❤️</h1>
+
+
+<h2>
+¿Quieres ir al cine a ver Spider-Man?
+</h2>
+
+
+<p>
+
+Prometo comprar las palomitas 🍿,
+el refresco.
+
+❤️
+
+</p>
+
+
+
+<div class="botones">
+
+
+<button id="si" onclick="mostrarAgenda()">
+
+💖 Sí
+
+</button>
+
+
+
+<button id="no" onmouseover="moverNo()">
+
+🙈 No
+
+</button>
+
+
+</div>
+
+
+</div>
+
+
+
+
+
+
+<!-- AGENDA -->
+
+
+<div class="card" id="agenda" style="display:none;">
+
+
+<h1>
+
+¡Sabía que aceptarías!
+
+</h1>
+
+
+<p>
+
+Elige el día y la hora para ir al cine y ver la pelicula.
+
+</p>
+
+
+
+<label>
+
+📅 Fecha
+
+</label>
+
+
+<input type="date" id="fecha">
+
+
+
+
+<label>
+
+🕒 Hora
+
+</label>
+
+
+<input type="time" id="hora">
+
+
+
+<br><br>
+
+
+
+<button id="si" onclick="mostrarTarjeta()">
+
+💌 Confirmar
+
+</button>
+
+
+
+</div>
+
+
+
+
+
+
+
+<!-- TARJETA FINAL -->
+
+
+<div class="card" id="tarjeta" style="display:none;">
+
+
+<h1>
+
+🍿🎬 Cine confirmado 🍿🎬
+
+</h1>
+
+
+<h2>
+
+🍿🎬 Pase especial de cine
+
+</h2>
+
+
+
+<div class="linea"></div>
+
+
+
+
+<p>
+
+📅 Fecha:
+
+<br>
+
+<b id="fechaFinal"></b>
+
+</p>
+
+
+
+
+<p>
+
+🕒 Hora:
+
+<br>
+
+<b id="horaFinal"></b>
+
+</p>
+
+
+
+
+<div class="linea"></div>
+
+
+
+
+<h2>
+
+💖 Para ti
+
+</h2>
+
+
+
+<p>
+
+Gracias por aceptar.
+Porfavor mandarme captura de la hora y fecha para ir al cine.
+PARA MAS BENEFICIOS VE AL SERVICIO VIP. 
+
+❤️
+
+</p>
+
+
+
+
+<div style="font-size:50px;">
+
+🍿🎬❤️
+
+</div>
+
+
+
+<br>
+
+
+
+<div class="vip-container">
+
+
+<button id="vip" onclick="abrirVIP()">
+
+💎 Servicio VIP
+
+</button>
+
+
+</div>
+
+
+
+</div>
+
+
+
+
+
+
+<script>
+
+
+
+
+function moverNo(){
+
+
+let boton=document.getElementById("no");
+
+
+let x=Math.random()*250;
+
+let y=Math.random()*100;
+
+
+
+boton.style.left=x+"px";
+
+boton.style.top=y+"px";
+
+
+}
+
+
+
+
+
+function mostrarAgenda(){
+
+
+document.getElementById("pregunta").style.display="none";
+
+
+document.getElementById("agenda").style.display="block";
+
+
+}
+
+
+
+
+
+function mostrarTarjeta(){
+
+
+let fecha=document.getElementById("fecha").value;
+
+let hora=document.getElementById("hora").value;
+
+
+
+if(fecha=="" || hora==""){
+
+
+alert("Selecciona una fecha y una hora ❤️");
+
+
+return;
+
+}
+
+
+
+
+document.getElementById("fechaFinal").innerHTML=fecha;
+
+
+document.getElementById("horaFinal").innerHTML=hora;
+
+
+
+document.getElementById("agenda").style.display="none";
+
+
+document.getElementById("tarjeta").style.display="block";
+
+
+
+lluviaCorazones();
+
+
+
+}
+
+
+
+
+
+
+function abrirVIP(){
+
+
+window.location.href="tarjeta.html";
+
+
+}
+
+
+
+
+
+
+function lluviaCorazones(){
+
+
+
+for(let i=0;i<80;i++){
+
+
+let corazon=document.createElement("div");
+
+
+corazon.className="corazon";
+
+
+corazon.innerHTML="❤️";
+
+
+
+corazon.style.left=Math.random()*100+"vw";
+
+
+
+corazon.style.fontSize=(15+Math.random()*30)+"px";
+
+
+
+corazon.style.animationDuration=(2+Math.random()*4)+"s";
+
+
+
+document.body.appendChild(corazon);
+
+
+
+setTimeout(()=>{
+
+
+corazon.remove();
+
+
+},5000);
+
+
+
+}
+
+
+
+}
+
+
+
+</script>
+
+
+
+</body>
+
+</html>
